@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  background: #f0293e;
+  background: #5687E2;
   color: #fff;
   text-align: center;
   flex-grow: 0;
@@ -71,12 +71,15 @@ form > div > input {
 }
 
 button {
-  background: #333e5a;
+  background: #FF81B5;
   color: #fff;
   font-size: 16px;
   padding: 0.4em;
   border-radius: 6px;
   border: 1px solid transparent;
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
 }
 button:hover {
   filter: brightness(150%);
@@ -107,7 +110,7 @@ button:hover {
   padding: 0 2em 2em;
 }
 .participant {
-  background: #333e5a;
+  background: #C3D435;
   padding: 10px;
   border-radius: 6px;
   display: inline-block;
@@ -123,21 +126,10 @@ button:hover {
 }
 
 video {
-  width: 100%;
+  width: 500px;
   max-width: 600px;
   display: block;
   margin: 0 auto;
   border-radius: 6px;
 }
 
-footer {
-  background: #333e5a;
-  color: #fff;
-  text-align: center;
-  flex-grow: 0;
-  padding: 1em 0;
-}
-
-footer a {
-  color: #fff;
-}

@@ -10,10 +10,10 @@ const Lobby = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Enter a room</h2>
+      <h2>Entre em uma consulta</h2>
       <div>
         <label htmlFor="name">
-          Name:
+          Nome:
           <input
             type="text"
             id="field"
@@ -27,7 +27,7 @@ const Lobby = ({
 
       <div>
         <label htmlFor="room">
-          Room name:
+          Código da sala:
           <input
             type="text"
             id="room"
@@ -40,7 +40,7 @@ const Lobby = ({
       </div>
 
       <button type="submit" disabled={connecting}>
-        {connecting ? "Connecting" : "Join"}
+        {connecting ? "Conectando" : "Entrar"}
       </button>
     </form>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 
+import tudoBemLogo from "./assets/tudobem-logo.svg";
 import "./App.css";
 import VideoChat from "./VideoChat";
 
@@ -7,20 +8,11 @@ const App = () => {
   return (
     <div className="app">
       <header>
-        <h1>Video Chat with Hooks</h1>
+        <img src={tudoBemLogo} alt="tudobem" width={150} height={70} />
       </header>
       <main>
         <VideoChat />
       </main>
-      <footer>
-        <p>
-          Made with{" "}
-          <span role="img" aria-label="React">
-            ⚛️
-          </span>{" "}
-          by <a href="https://twitter.com/philnash">philnash</a>
-        </p>
-      </footer>
     </div>
   );
 };

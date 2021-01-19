@@ -31,9 +31,9 @@ const Room = ({ roomName, room, handleLogout }) => {
 
   return (
     <div className="room">
-      <h2>Room: {roomName}</h2>
+      <h2>Sala: {roomName}</h2>
       <button type="button" onClick={handleLogout}>
-        Log out
+        Sair
       </button>
       <div className="local-participant">
         {room ? (
@@ -45,7 +45,7 @@ const Room = ({ roomName, room, handleLogout }) => {
           ""
         )}
       </div>
-      <h3>Remote Participants</h3>
+      <h3>Participantes</h3>
       <div className="remote-participants">{remoteParticipants}</div>
     </div>
   );
