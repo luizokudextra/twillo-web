@@ -1,6 +1,7 @@
-import React from 'react';
-import './App.css';
-import VideoChat from './VideoChat';
+import React from "react";
+
+import "./App.css";
+import VideoChat from "./VideoChat";
 
 const App = () => {
   return (
@@ -13,10 +14,10 @@ const App = () => {
       </main>
       <footer>
         <p>
-          Made with{' '}
+          Made with{" "}
           <span role="img" aria-label="React">
             ⚛️
-          </span>{' '}
+          </span>{" "}
           by <a href="https://twitter.com/philnash">philnash</a>
         </p>
       </footer>

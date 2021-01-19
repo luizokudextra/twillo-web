@@ -1,16 +1,13 @@
 {
-  "name": "react-express-starter",
+  "name": "twillo-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-scripts": "^4.0.1",
-    "twilio-video": "^2.10.0",
     "twilio": "^3.54.2",
-    "express-pino-logger": "^5.0.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "twilio-video": "^2.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,9 +15,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node-env-run server --exec nodemon | pino-colada",
-    "dev": "run-p server start"
+    "dev": "run-p server start",
+    "prettier": "prettier --write \"**/*.{js,jsx}\"",
+    "eslint:watch": "esw -w \"**/*.{js,jsx}\" --color --clear"
   },
-  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -33,10 +31,23 @@
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/qs": "^6.9.4",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-node": "^0.3.3",
+    "eslint-import-resolver-root-import": "^1.0.4",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import-helpers": "^1.0.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-watch": "^6.0.1",
     "node-env-run": "^4.0.2",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "pino-colada": "^2.1.0",
+    "prettier": "^2.0.1",
     "typescript": "^4.1.3"
   }
 }

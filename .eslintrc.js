@@ -1,0 +1,73 @@
+module.exports = {
+  env: {
+    es6: true,
+    jest: true,
+    browser: true,
+    node: true,
+  },
+  extends: [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "eslint:recommended",
+    "plugin:react/recommended",
+  ],
+  parser: "babel-eslint",
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+    __DEV__: true,
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: "module",
+  },
+  plugins: ["react", "prettier", "react-hooks", "import-helpers"],
+  rules: {
+    "prettier/prettier": "error",
+    camelcase: "off",
+    "consistent-return": "off",
+    "global-require": "off",
+    "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "no-nested-ternary": "off",
+    "no-unused-expressions": "off",
+    "no-console": ["error", { allow: ["log"] }],
+    "no-use-before-define": [
+      "error",
+      { functions: true, classes: true, variables: false },
+    ],
+    "react/prop-types": [
+      "error",
+      { skipUndeclared: true, ignore: ["style", "className"] },
+    ],
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": [0],
+    "react/display-name": [0],
+    "react-native/no-raw-text": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/extensions": ["error", { js: "never", jsx: "never" }],
+    "import/prefer-default-export": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        newlinesBetween: "always",
+        groups: [
+          "/^react/",
+          "module",
+          "/^~.*/",
+          "/^./modules/",
+          ["parent", "sibling", "index"],
+        ],
+        alphabetize: { order: "asc", ignoreCase: true },
+      },
+    ],
+  },
+};

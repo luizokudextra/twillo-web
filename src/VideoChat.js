@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
+
 import Video from "twilio-video";
+
 import Lobby from "./Lobby";
 import Room from "./Room";
 
@@ -21,7 +23,7 @@ const VideoChat = () => {
     async (event) => {
       event.preventDefault();
       setConnecting(true);
-      const data = await fetch("/video/token", {
+      const data = await fetch("http://192.168.100.85:3001/video/token", {
         method: "POST",
         body: JSON.stringify({
           identity: username,
@@ -34,12 +36,12 @@ const VideoChat = () => {
       Video.connect(data.token, {
         name: roomName,
       })
-        .then((room) => {
+        .then((newRoom) => {
           setConnecting(false);
-          setRoom(room);
+          setRoom(newRoom);
         })
         .catch((err) => {
-          console.error(err);
+          console.log(err);
           setConnecting(false);
         });
     },
