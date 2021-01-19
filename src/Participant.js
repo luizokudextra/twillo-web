@@ -1,17 +1,47 @@
 import React, { useState, useEffect, useRef } from "react";
+import { FiMicOff, FiMic, FiVideoOff, FiVideo } from "react-icons/fi";
 
 const Participant = ({ participant }) => {
   const [videoTracks, setVideoTracks] = useState([]);
   const [audioTracks, setAudioTracks] = useState([]);
+  const [isMuted, setMuted] = useState(false);
+  const [isVideoOpen, setVideoOpen] = useState(true);
 
   const videoRef = useRef();
   const audioRef = useRef();
+
+  const changeVideoStatus = async () => {
+    if (isVideoOpen) {
+      await videoTracks.forEach((track) => {
+        track.disable();
+      });
+      setVideoOpen(false);
+    } else {
+      await videoTracks.forEach((track) => {
+        track.enable();
+      });
+      setVideoOpen(true);
+    }
+  };
+
+  const changeAudioStatus = async () => {
+    if (!isMuted) {
+      await audioTracks.forEach((track) => {
+        track.disable();
+      });
+      setMuted(true);
+    } else {
+      await audioTracks.forEach((track) => {
+        track.enable();
+      });
+      setMuted(false);
+    }
+  };
 
   const trackpubsToTracks = (trackMap) =>
     Array.from(trackMap.values())
       .map((publication) => publication.track)
       .filter((track) => track !== null);
-
   useEffect(() => {
     setVideoTracks(trackpubsToTracks(participant.videoTracks));
     setAudioTracks(trackpubsToTracks(participant.audioTracks));
@@ -69,12 +99,28 @@ const Participant = ({ participant }) => {
   return (
     <div className="participant">
       <h3>{participant.identity}</h3>
-      <video ref={videoRef} autoPlay>
+      <video ref={videoRef} autoPlay muted={isMuted}>
         <track kind="captions" />
       </video>
       <audio ref={audioRef} autoPlay>
         <track kind="captions" />
       </audio>
+      <div className="action-button-container">
+        <button
+          type="button"
+          className="action-button"
+          onClick={changeAudioStatus}
+        >
+          {isMuted ? <FiMicOff size={20} /> : <FiMic size={20} />}
+        </button>
+        <button
+          type="button"
+          className="action-button"
+          onClick={changeVideoStatus}
+        >
+          {isVideoOpen ? <FiVideo size={20} /> : <FiVideoOff size={20} />}
+        </button>
+      </div>
     </div>
   );
 };

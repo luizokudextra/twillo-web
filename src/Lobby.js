@@ -39,8 +39,8 @@ const Lobby = ({
         </label>
       </div>
 
-      <button type="submit" disabled={connecting}>
-        {connecting ? "Conectando" : "Entrar"}
+      <button className="big-button" type="submit" disabled={connecting}>
+        {connecting ? "Conectando..." : "Entrar"}
       </button>
     </form>
   );

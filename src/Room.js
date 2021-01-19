@@ -32,7 +32,7 @@ const Room = ({ roomName, room, handleLogout }) => {
   return (
     <div className="room">
       <h2>Sala: {roomName}</h2>
-      <button type="button" onClick={handleLogout}>
+      <button className="big-button" type="button" onClick={handleLogout}>
         Sair
       </button>
       <div className="local-participant">

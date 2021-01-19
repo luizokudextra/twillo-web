@@ -61,34 +61,36 @@ form > div > label {
   display: block;
   margin-bottom: 0.3em;
 }
-form > div > input {
-  display: block;
-  width: 100%;
+input {
+  margin-left: 10px;
+  width: 150px;
+  height: 40px;
   font-size: 16px;
   padding: 0.4em;
   border-radius: 6px;
   border: 1px solid #333e5a;
 }
 
-button {
+.big-button {
   background: #FF81B5;
   color: #fff;
   font-size: 16px;
   padding: 0.4em;
   border-radius: 6px;
   border: 1px solid transparent;
-  width: 100px;
+  width: 150px;
   height: 40px;
   font-weight: bold;
 }
-button:hover {
-  filter: brightness(150%);
+.big-button:hover {
+  filter: brightness(130%);
+  cursor: pointer;
 }
 
 .room {
   position: relative;
 }
-.room button {
+.room .big-button {
   position: absolute;
   top: 0;
   right: 20px;
@@ -115,6 +117,7 @@ button:hover {
   border-radius: 6px;
   display: inline-block;
   margin-right: 10px;
+  
 }
 .participant:last-child {
   margin-right: 0;
@@ -124,12 +127,30 @@ button:hover {
   padding-bottom: 0.5em;
   color: #fff;
 }
-
+.action-button-container {
+  justify-content: center;
+  display: flex;
+}
+.action-button {
+    margin: 10px;
+    margin-bottom: 0px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 60px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline:none;
+    cursor: pointer;
+}
 video {
-  width: 500px;
+  width: 100%;
   max-width: 600px;
   display: block;
   margin: 0 auto;
   border-radius: 6px;
+  transform: scaleX(-1);
 }
 
