@@ -23,16 +23,19 @@ const VideoChat = () => {
     async (event) => {
       event.preventDefault();
       setConnecting(true);
-      const data = await fetch("http://192.168.100.85:3001/video/token", {
-        method: "POST",
-        body: JSON.stringify({
-          identity: username,
-          room: roomName,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => res.json());
+      const data = await fetch(
+        "https://twillo-server.herokuapp.com/video/token",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            identity: username,
+            room: roomName,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((res) => res.json());
       Video.connect(data.token, {
         name: roomName,
       })
