@@ -113,7 +113,7 @@ const Participant = ({ participant, isLocal }) => {
         <track kind="captions" />
       </video>
 
-      <audio ref={audioRef} muted={isMuted}>
+      <audio ref={audioRef}>
         <track kind="captions" />
       </audio>
       {isLocal && (

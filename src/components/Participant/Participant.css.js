@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  min-width: 200px;
   background: #c3d435;
   padding: 10px;
   border-radius: 6px;

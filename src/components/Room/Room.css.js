@@ -34,9 +34,10 @@ export const SignOutButton = styled.button`
 
 export const RemoteParticipants = styled.div`
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 2em 2em;
+  overflow-x: auto;
+  max-width: 100%;
 `;
 
 export const LocalParticipant = styled.div`
