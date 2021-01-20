@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiMicOff, FiMic, FiVideoOff, FiVideo } from "react-icons/fi";
 
+import { Container, ActionButtonContainer } from "./Participant.css";
+
 const Participant = ({ participant }) => {
   const [videoTracks, setVideoTracks] = useState([]);
   const [audioTracks, setAudioTracks] = useState([]);
-  const [isMuted, setMuted] = useState(false);
-  const [isVideoOpen, setVideoOpen] = useState(true);
+  const [isMuted, setMuted] = useState(true);
+  const [isVideoOpen, setVideoOpen] = useState(false);
 
   const videoRef = useRef();
   const audioRef = useRef();
@@ -97,7 +99,7 @@ const Participant = ({ participant }) => {
   }, [audioTracks]);
 
   return (
-    <div className="participant">
+    <Container>
       <h3>{participant.identity}</h3>
       <video ref={videoRef} autoPlay muted={isMuted}>
         <track kind="captions" />
@@ -105,23 +107,15 @@ const Participant = ({ participant }) => {
       <audio ref={audioRef} autoPlay>
         <track kind="captions" />
       </audio>
-      <div className="action-button-container">
-        <button
-          type="button"
-          className="action-button"
-          onClick={changeAudioStatus}
-        >
+      <ActionButtonContainer>
+        <button type="button" onClick={changeAudioStatus}>
           {isMuted ? <FiMicOff size={20} /> : <FiMic size={20} />}
         </button>
-        <button
-          type="button"
-          className="action-button"
-          onClick={changeVideoStatus}
-        >
+        <button type="button" onClick={changeVideoStatus}>
           {isVideoOpen ? <FiVideo size={20} /> : <FiVideoOff size={20} />}
         </button>
-      </div>
-    </div>
+      </ActionButtonContainer>
+    </Container>
   );
 };
 

@@ -6,7 +6,9 @@
     "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
+    "styled-components": "^5.2.1",
     "twilio": "^3.54.2",
     "twilio-video": "^2.10.0"
   },

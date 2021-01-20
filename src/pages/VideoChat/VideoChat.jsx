@@ -2,8 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 
 import Video from "twilio-video";
 
-import Lobby from "./Lobby";
-import Room from "./Room";
+import Lobby from "../../components/Lobby/Lobby";
+import Room from "../../components/Room/Room";
 
 const VideoChat = () => {
   const [username, setUsername] = useState("");
@@ -82,24 +82,19 @@ const VideoChat = () => {
     }
   }, [room, handleLogout]);
 
-  let render;
   if (room) {
-    render = (
-      <Room roomName={roomName} room={room} handleLogout={handleLogout} />
-    );
-  } else {
-    render = (
-      <Lobby
-        username={username}
-        roomName={roomName}
-        handleUsernameChange={handleUsernameChange}
-        handleRoomNameChange={handleRoomNameChange}
-        handleSubmit={handleSubmit}
-        connecting={connecting}
-      />
-    );
+    return <Room roomName={roomName} room={room} handleLogout={handleLogout} />;
   }
-  return render;
+  return (
+    <Lobby
+      username={username}
+      roomName={roomName}
+      handleUsernameChange={handleUsernameChange}
+      handleRoomNameChange={handleRoomNameChange}
+      handleSubmit={handleSubmit}
+      connecting={connecting}
+    />
+  );
 };
 
 export default VideoChat;

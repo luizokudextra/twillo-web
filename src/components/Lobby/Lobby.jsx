@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Container, FormContainer } from "./Lobby.css";
+
 const Lobby = ({
   username,
   handleUsernameChange,
@@ -9,12 +11,12 @@ const Lobby = ({
   connecting,
 }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Entre em uma consulta</h2>
-      <div>
-        <label htmlFor="name">
-          Nome:
+    <Container>
+      <FormContainer>
+        <form onSubmit={handleSubmit}>
+          <h2>Entre em uma consulta</h2>
           <input
+            placeholder="Nome"
             type="text"
             id="field"
             value={username}
@@ -22,13 +24,9 @@ const Lobby = ({
             readOnly={connecting}
             required
           />
-        </label>
-      </div>
 
-      <div>
-        <label htmlFor="room">
-          Código da sala:
           <input
+            placeholder="Código da sala"
             type="text"
             id="room"
             value={roomName}
@@ -36,13 +34,13 @@ const Lobby = ({
             readOnly={connecting}
             required
           />
-        </label>
-      </div>
 
-      <button className="big-button" type="submit" disabled={connecting}>
-        {connecting ? "Conectando..." : "Entrar"}
-      </button>
-    </form>
+          <button type="submit" disabled={connecting}>
+            {connecting ? "Conectando..." : "Entrar"}
+          </button>
+        </form>
+      </FormContainer>
+    </Container>
   );
 };
 

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import Participant from "./Participant";
+import Participant from "../Participant/Participant";
+import {
+  Container,
+  SignOutButton,
+  RemoteParticipants,
+  LocalParticipant,
+} from "./Room.css";
 
 const Room = ({ roomName, room, handleLogout }) => {
   const [participants, setParticipants] = useState([]);
@@ -30,24 +36,26 @@ const Room = ({ roomName, room, handleLogout }) => {
   ));
 
   return (
-    <div className="room">
-      <h2>Sala: {roomName}</h2>
-      <button className="big-button" type="button" onClick={handleLogout}>
-        Sair
-      </button>
-      <div className="local-participant">
+    <Container>
+      <h1>Sala: {roomName}</h1>
+
+      <LocalParticipant>
         {room ? (
           <Participant
             key={room.localParticipant.sid}
             participant={room.localParticipant}
+            isLocal
           />
         ) : (
           ""
         )}
-      </div>
-      <h3>Participantes</h3>
-      <div className="remote-participants">{remoteParticipants}</div>
-    </div>
+      </LocalParticipant>
+      <h2>Participantes</h2>
+      <RemoteParticipants>{remoteParticipants}</RemoteParticipants>
+      <SignOutButton type="button" onClick={handleLogout}>
+        Sair
+      </SignOutButton>
+    </Container>
   );
 };
 

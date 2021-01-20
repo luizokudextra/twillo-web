@@ -1,19 +1,18 @@
 import React from "react";
 
-import tudoBemLogo from "./assets/tudobem-logo.svg";
-import "./App.css";
-import VideoChat from "./VideoChat";
+import Header from "./components/Header/Header";
+import Routes from "./routes/Routes";
+import GlobalStyle from "./styles/global.css";
 
 const App = () => {
   return (
-    <div className="app">
-      <header>
-        <img src={tudoBemLogo} alt="tudobem" width={150} height={70} />
-      </header>
+    <>
+      <Header />
       <main>
-        <VideoChat />
+        <Routes />
       </main>
-    </div>
+      <GlobalStyle />
+    </>
   );
 };
 
