@@ -6,4 +6,5 @@ export const Container = styled.header`
   text-align: center;
   flex-grow: 0;
   margin-bottom: 2em;
+  padding: 30px 0px;
 `;
