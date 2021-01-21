@@ -38,6 +38,7 @@ const VideoChat = () => {
       ).then((res) => res.json());
       Video.connect(data.token, {
         name: roomName,
+        video: { width: 370 },
       })
         .then((newRoom) => {
           setConnecting(false);

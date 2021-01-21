@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
   video {
     width: 100%;
-    max-width: 600px;
+    max-width: 370px;
     display: block;
     margin: 0 auto;
     border-radius: 6px;
