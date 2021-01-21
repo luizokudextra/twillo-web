@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-width: 200px;
-  background: #c3d435;
+  width: ${(props) => (props.isLocal ? "auto" : "250px !important")};
+  min-width: 250px;
+  max-width: 370px;
+  background: ${(props) => (props.isLocal ? "#C3D435" : "#179A7B")};
   padding: 10px;
   border-radius: 6px;
   display: inline-block;
@@ -12,7 +14,8 @@ export const Container = styled.div`
   }
   h3 {
     text-align: center;
-    padding-bottom: 0.5em;
+    padding-bottom: 5px;
+    color: ${(props) => (props.isLocal ? "auto" : "#ffffff")};
   }
   video {
     width: 100%;

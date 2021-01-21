@@ -19,7 +19,7 @@ export const FormContainer = styled.div`
     margin: 0 auto;
   }
   h2 {
-    margin-bottom: 1em;
+    margin-bottom: 10px;
     text-align: center;
   }
   input {
@@ -27,7 +27,7 @@ export const FormContainer = styled.div`
     width: 100%;
     height: 40px;
     font-size: 16px;
-    padding: 0.4em;
+    padding: 5px;
     border-radius: 6px;
     border: 1px solid #333e5a;
     margin-bottom: 10px;
@@ -36,7 +36,7 @@ export const FormContainer = styled.div`
     background: #ff81b5;
     color: #fff;
     font-size: 16px;
-    padding: 0.4em;
+    padding: 5px;
     border-radius: 6px;
     border: 1px solid transparent;
     width: 100%;

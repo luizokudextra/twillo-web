@@ -5,6 +5,6 @@ export const Container = styled.header`
   color: #fff;
   text-align: center;
   flex-grow: 0;
-  margin-bottom: 2em;
+  margin-bottom: 20px;
   padding: 30px 0px;
 `;

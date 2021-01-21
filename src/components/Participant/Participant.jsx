@@ -106,7 +106,7 @@ const Participant = ({ participant, isLocal }) => {
     }
   };
   return (
-    <Container>
+    <Container isLocal={isLocal}>
       <h3>{participant.identity}</h3>
 
       <video ref={videoRef}>

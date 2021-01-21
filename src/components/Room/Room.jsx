@@ -50,8 +50,12 @@ const Room = ({ roomName, room, handleLogout }) => {
           ""
         )}
       </LocalParticipant>
-      <h2>Participantes</h2>
-      <RemoteParticipants>{remoteParticipants}</RemoteParticipants>
+      {remoteParticipants.length > 0 && (
+        <>
+          <h2>Participantes</h2>
+          <RemoteParticipants>{remoteParticipants}</RemoteParticipants>
+        </>
+      )}
       <SignOutButton type="button" onClick={handleLogout}>
         Sair
       </SignOutButton>
